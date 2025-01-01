@@ -1,6 +1,8 @@
-i# EMNIST Classification Project
+# EMNIST Classification Project
 
 Welcome to the repository for the **EMNIST Classification Project**, part of a larger portfolio showcasing skills in **machine learning engineering**, **data science**, and **data engineering**. This repository focuses on tackling classification challenges on the EMNIST dataset and represents a comprehensive case study that integrates theory, technical practice, and performance optimization.
+
+For an overview of all projects in the portfolio, visit the [Engineering, Analysis, Data Science, and Machine Learning Portfolio](https://github.com/MiladKetabGhale/EngineeringAnalysisData_ML).
 
 The project is divided into **seven chapters**, each presented as a standalone Jupyter notebook. Additionally, a unified notebook combines the entire project for convenience. This structure facilitates accessibility for users with varying needs and preferences.
 
