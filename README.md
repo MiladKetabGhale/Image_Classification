@@ -49,13 +49,6 @@ Each chapter focuses on specific aspects of the project:
   - Summarizes the findings and contributions of the project.  
   - Highlights limitations and proposes directions for future work, such as tackling class imbalance, unsupervised learning, adversarial robustness, and distributed learning.
 
-## Key Features
-
-- **Statistical Analysis and Visualization**: Uncovering patterns and feature relationships through exploratory data analysis.  
-- **Classifier Training and Evaluation**: Establishing performance benchmarks using multiple classifiers and advanced tuning techniques.  
-- **Error and Reliability Analysis**: Incorporating tools such as SHAP, calibration curves, and Brier scores to ensure robust error evaluation.  
-- **Feature Importance and Selection**: Leveraging feature importance for performance optimization and interpretability.  
-- **Generalizability and Uncertainty**: Quantifying model uncertainty with predictive entropy and analyzing performance on unseen data.
 
 ## License
 This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).  
