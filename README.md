@@ -4,7 +4,7 @@ Welcome to the repository for the **EMNIST Classification Project**, part of a l
 
 For an overview of all projects in the portfolio, visit the [Engineering, Analysis, Data Science, and Machine Learning Portfolio](https://github.com/MiladKetabGhale/EngineeringAnalysisData_ML).
 
-The project is divided into **seven chapters**, each presented as a standalone Jupyter notebook. Additionally, a unified notebook combines the entire project for convenience. This structure facilitates accessibility for users with varying needs and preferences.
+The project is structured as a continuous narrative, with each chapter building on the results and insights of the preceding ones. It is divided into seven chapters, each presented in a separate Jupyter notebook. A unified notebook is also included which combines the entire project into one for a holistic view.
 
 ## Repository Structure
 
