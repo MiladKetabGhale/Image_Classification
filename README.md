@@ -72,15 +72,23 @@ A challenging binary scenario (digit ‘8’ vs. the rest) that acts as a bridge
 
 The table below traces XGBoost’s journey from a strong baseline to a lean, calibrated champion, illustrating how each chapter’s engineering step moves the needle.
 
-#### 📈 Performance Trajectory — 8-vs-All Benchmark
+### 📈 Performance Trajectory — 8-vs-All Benchmark
 
-| Stage | Model (key step) | Features Used | Accuracy | Precision | Recall | Macro F1 | ROC AUC | Notes |
-|-------|------------------|---------------|---------:|----------:|-------:|---------:|--------:|-------|
-| **Baseline** | XGBoost (default)            | 100 % (all pixels) | 0.987 | 0.971 | 0.894 | 0.931 | 0.997 | Strong starting point but untuned |
-| **Hyper-param Tuning** | XGBoost (HalvingGridSearchCV) | 100 % | 0.994 | 0.986 | 0.956 | 0.971 | 0.999 | +3.98 pp F1 with smarter params |
-| **Ensemble Context** | Stacked Ensemble (XGB + RF + Ada) | 100 % | 0.995 | 0.982 | 0.968 | 0.975 | 0.999 | Marginal yet measurable lift |
-| **Feature Reduction** | XGBoost (SHAP-selected)        | **≈ 33 %** (1/3 pixels) | **0.995** | **0.994** | **0.960** | **0.977** | **0.9997** | Highest F1 **with 67 % fewer features** |
-| **Best Traditional Runner-up** | AdaBoost (tuned)              | 100 % | 0.995 | 0.984 | 0.961 | 0.972 | 0.999 | Shows XGB’s edge after tuning |
+> 🔼: Metric increased compared to the baseline  
+> 🔽: Metric decreased compared to the baseline
+
+> Error Reduction (%) = ((baseline error − tuned error) / baseline error) × 100
+
+| Model                    | Features Used (%) | Accuracy (Δ%)      | Precision (Δ%)      | Recall (Δ%)         | Macro F1 (Δ%)       | ROC AUC (Δ%)        | Error Reduction (%) |
+|--------------------------|-------------------|---------------------|----------------------|----------------------|----------------------|----------------------|----------------|
+| **XGBoost (baseline)**   | 100%              | 0.987               | 0.971                | 0.894                | 0.931                | 0.997                | —              |
+| XGBoost (tuned)          | 100%              | 0.994 (+0.71%)      | 0.986 (+1.54%)       | 0.956 (+6.94%)       | 0.971 (+4.30%)       | 0.999 (+0.20%)       | 53.85%         |
+| XGB + RF + Ada           | 100%              | 0.995 (+0.81%)      | 0.982 (+1.13%)       | 0.968 (+8.28%)       | 0.975 (+4.73%)       | 0.999 (+0.20%)       | 61.54%         |
+| XGBoost (SHAP)           | ~30%              | 0.995 (+0.81%)      | 0.994 (+2.37%)       | 0.960 (+7.38%)       | 0.977 (+4.94%)       | 0.9997 (+0.27%)      | 61.54%         |
+| Best AdaBoost            | 100%              | 0.9945 (+0.76%)     | 0.9836 (+1.30%)      | 0.961 (+7.49%)       | 0.9722 (+4.42%)      | 0.9994 (+0.24%)      | 57.69%         |
+| SGD Classifier (tuned)   | 100%              | 0.9315 (−5.62%)     | 0.9178 (−5.47%)      | 0.346 (−61.29%)      | 0.5025 (−46.04%)     | 0.9375 (−5.97%)      | −28.08%        |
+| Extra Trees (tuned)      | 100%              | 0.9873 (+0.03%)     | 0.9910 (+2.06%)      | 0.881 (−1.45%)       | 0.9328 (+0.19%)      | 0.9983 (+0.13%)      | 2.31%          |
+| Random Forest (tuned)    | 100%              | 0.9859 (−0.11%)     | 0.9909 (+2.06%)      | 0.867 (−3.02%)       | 0.9248 (−0.66%)      | 0.9983 (+0.13%)      | −8.46%         |
 
 > **Key takeaways:**  
 > • Macro F1 jumped **+4.6 pp** from baseline to SHAP-refined XGBoost while **cutting input dimensionality by two-thirds**.  
