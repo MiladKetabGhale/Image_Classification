@@ -74,9 +74,6 @@ The table below traces XGBoost’s journey from a strong baseline to a lean, cal
 
 ### 📈 Performance Trajectory — 8-vs-All Benchmark
 
-> 🔼: Metric increased compared to the baseline  
-> 🔽: Metric decreased compared to the baseline
-
 > Error Reduction (%) = ((baseline error − tuned error) / baseline error) × 100
 
 | Model                    | Features Used (%) | Accuracy (Δ%)      | Precision (Δ%)      | Recall (Δ%)         | Macro F1 (Δ%)       | ROC AUC (Δ%)        | Error Reduction (%) |
