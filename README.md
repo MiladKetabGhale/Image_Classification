@@ -118,7 +118,7 @@ We tackle the full 47-class EMNIST task and compare three direct multiclass lear
 
 ### Calibration & Reliability
 
-We need to have a measure of how reliable the produced probabilities by a model are. Below are the calibration (reliability) curves for every tuned model—XGBoost, AdaBoost, Random Forest, and others.
+The calibration curves below illustrate the reliability of predicted probabilities for our tuned models. Calibration measures how well the predicted probabilities reflect the actual outcomes, indicating the trustworthiness of the model's confidence estimates.
 
 ![Reliability diagram of tuned XGBoost](figures/cal_curve.png)
 
