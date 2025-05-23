@@ -118,7 +118,9 @@ We tackle the full 47-class EMNIST task and compare three direct multiclass lear
 
 ### Calibration & Reliability
 
-Raw accuracy isn’t enough; models must know how confident they are. We report Brier scores, reliability diagrams, and post-hoc calibration (isotonic / Platt) for the tuned models, demonstrating that high performance and trustworthy probability estimates can coexist. 
+We need to have a measure of how reliable the produced probabilities by a model are. Below are the calibration (reliability) curves for every tuned model—XGBoost, AdaBoost, Random Forest, and others.
+
+![Reliability diagram of tuned XGBoost](figures/cal_curve.png)
 
 ## License
 This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).  
